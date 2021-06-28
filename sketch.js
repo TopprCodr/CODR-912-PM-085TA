@@ -47,14 +47,14 @@ for (var i = 0; i < pairs.length; i++) {
 });
 
 var bodyStyle = { fillStyle: '#222' };
-
+ 
 // scene code
-Composite.add(world, [
-Bodies.rectangle(400, 0, 800, 50, { isStatic: true, render: bodyStyle }),
-Bodies.rectangle(400, 600, 800, 50, { isStatic: true, render: bodyStyle }),
-Bodies.rectangle(800, 300, 50, 600, { isStatic: true, render: bodyStyle }),
-Bodies.rectangle(0, 300, 50, 600, { isStatic: true, render: bodyStyle })
-]);
+ 
+var wall1 = Bodies.rectangle(400, 0, 800, 50, { isStatic: true, render: bodyStyle }),
+var wall2 = Bodies.rectangle(400, 600, 800, 50, { isStatic: true, render: bodyStyle }),
+var wall3 = Bodies.rectangle(800, 300, 50, 600, { isStatic: true, render: bodyStyle }),
+var wall4 = Bodies.rectangle(0, 300, 50, 600, { isStatic: true, render: bodyStyle })
+Composite.add(world, [wall1,wall2,wall3,wall4]);
 
 var stack = Composites.stack(70, 100, 9, 4, 50, 50, function(x, y) {
 return Bodies.circle(x, y, 15, { restitution: 1, render: bodyStyle });
